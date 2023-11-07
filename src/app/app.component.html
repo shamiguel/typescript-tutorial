@@ -18,14 +18,26 @@
   <br>
 
   <div class="row mt-3">
-  <div *ngIf="items.length === 0; else showItems">
+    <div class="col-sm-2">
+      <select class="form-select"
+        [(ngModel)]="listFilter"
+      >
+        <option value="0">All</option>
+        <option value="1">Unfulfilled</option>
+        <option value="2">Fulfilled</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+  <div *ngIf="visibleItems.length === 0; else showItems">
     <h3>No WISHES TO DISPLAY :(</h3>
 
   </div>
 
   <ng-template #showItems>
-    <ul *ngIf="items.length > 0" class="wish-list">
-      <li *ngFor="let item of items; index as ii">
+    <ul *ngIf="visibleItems.length > 0" class="wish-list">
+      <li *ngFor="let item of visibleItems; index as ii">
         <div class="form-check">
           <label for="" class="form-check-label">
             <input 
@@ -41,6 +53,8 @@
     </ul> 
   </ng-template>
 </div>
+
+
 
 
 </div>
