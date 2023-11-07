@@ -10,20 +10,21 @@
   </div>
 
   <ng-template #showItems>
-  <ul *ngIf="items.length > 0" class="wish-list">
-    <li *ngFor="let item of items; index as ii">
-      <div class="form-check">
-        <label for="" class="form-check-label">
-          <input 
-          type="checkbox" 
-          class="checkbox"
-          [checked]="item.isComplete"
-          [attr.data-index]="ii"
-          >{{item.wishText}}
-        </label>
-      </div>
-    </li>
-  </ul> 
-</ng-template>
+    <ul *ngIf="items.length > 0" class="wish-list">
+      <li *ngFor="let item of items; index as ii">
+        <div class="form-check">
+          <label for="" class="form-check-label">
+            <input 
+            type="checkbox" 
+            class="checkbox"
+            [checked]="item.isComplete"
+            [attr.data-index]="ii"
+            (click)="toggleItem(item)"
+            >{{item.wishText}}
+          </label>
+        </div>
+      </li>
+    </ul> 
+  </ng-template>
 
 </div>
