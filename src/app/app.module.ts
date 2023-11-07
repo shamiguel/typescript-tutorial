@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { WishListComponent } from './wish-list/wish-list.component';
 import { AddWishFormComponent } from './add-wish-form/add-wish-form.component';
+import { FilterWishComponent } from './filter-wish/filter-wish.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WishListComponent,
-    AddWishFormComponent
+    AddWishFormComponent,
+    FilterWishComponent
   ],
   imports: [
     BrowserModule,

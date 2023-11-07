@@ -1,13 +1,6 @@
 import { Component } from '@angular/core';
 import { WishItem } from 'src/shared/models/wishItem';
 
-
-const filters = [
-  (item : WishItem) => item, 
-  (item : WishItem) => !item.isComplete,
-  (item : WishItem) => item.isComplete
-]
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -21,10 +14,11 @@ export class AppComponent {
     new WishItem("To Create a great Angular App!!!"),
     new WishItem("Get Coffee", true) 
   ]
-  listFilter : any = '0';
+
+  filter: any = () => {};
 
   get visibleItems() : WishItem[] {
-    return this.items.filter(filters[this.listFilter])
+    return this.items.filter(this.filter)
   };
 
   title = 'Wish List';
