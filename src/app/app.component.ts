@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WishItem } from 'src/shared/models/wishItem';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Whatever';
+  items : WishItem[] = [
+    /* new WishItem("To Learn Angular"), 
+    new WishItem("To Learn TypeScript"),
+    new WishItem("To Create a great Angular App!!!"),
+    new WishItem("Get Coffee", true) */
+  ]
+  title = 'Wish List';
 }
