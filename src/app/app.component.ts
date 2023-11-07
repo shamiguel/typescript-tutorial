@@ -29,19 +29,6 @@ export class AppComponent {
 
   title = 'Wish List';
   
-  toggleItem(item: WishItem){
-    item.isComplete = !item.isComplete
-    console.log(item)
-  }
-
-  newWishText = "";
-
-  addNewWish(){
-    this.items.push(new WishItem(this.newWishText))
-    this.newWishText = '';
-  }
-
-
   filterChanged(value:any){
     console.log(value);
   }
