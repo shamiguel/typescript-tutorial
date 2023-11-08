@@ -15,7 +15,7 @@ export class AppComponent {
     new WishItem("Get Coffee", true) 
   ]
 
-  filter: any = () => {};
+  filter: any;
 
   title = 'Wish List';
   

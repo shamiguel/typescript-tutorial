@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { WishItem } from 'src/shared/models/wishItem';
 
 const filters = [
@@ -14,7 +14,9 @@ const filters = [
 })
 
 export class FilterWishComponent implements OnInit{
-  @Output() filter = new EventEmitter<any>();
+  @Input() filter: any;
+
+  @Output() filterChange = new EventEmitter<any>();
   constructor() {};
   
   ngOnInit(): void {
