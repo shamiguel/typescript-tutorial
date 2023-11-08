@@ -15,11 +15,6 @@ export class AppComponent {
     new WishItem("Get Coffee", true) 
   ]
 
-  filter: any;
-
   title = 'Wish List';
-  
-  filterChanged(value:any){
-    console.log(value);
-  }
+  filter: any;
 }
