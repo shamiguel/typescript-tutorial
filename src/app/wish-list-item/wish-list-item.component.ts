@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { WishItem } from 'src/shared/models/wishItem';
+import events from './../../shared/services/EventService';
 
 @Component({
   selector: 'wish-list-item',
@@ -30,4 +31,9 @@ export class WishListItemComponent implements OnInit {
     this.fulfilled = !this.fulfilled
     this.fulfilledChange.emit(this.fulfilled)
   }
+
+  removeWish(){
+    events.emit('removeWish', this.wishText);
+  }
+
 }

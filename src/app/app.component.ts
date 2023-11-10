@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { WishItem } from 'src/shared/models/wishItem';
+import events from './../shared/services/EventService';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,15 @@ export class AppComponent {
     new WishItem("Get Coffee", true) 
   ]
 
+
+  constructor(){
+    events.listen('removeWish', (wish)=>{
+      //todo remove wish from items
+      console.log(wish)
+    })
+  }
   title = 'Wish List';
   filter: any;
+
+  //Observer Pattern/Observable Object
 }
