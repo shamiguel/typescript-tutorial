@@ -21,6 +21,8 @@ export class AppComponent {
     events.listen('removeWish', (wish)=>{
       //todo remove wish from items
       console.log(wish)
+      let index = this.items.indexOf(wish);
+      this.items.splice(index, 1)
     })
   }
   title = 'Wish List';
