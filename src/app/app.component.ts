@@ -1,23 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { WishItem } from 'src/shared/models/wishItem';
 import { EventService } from 'src/shared/models/services/EventService';
+import { WishService } from './wish.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
 
-  items : WishItem[] = [
-    new WishItem("To Learn Angular"), 
-    new WishItem("To Learn TypeScript"),
-    new WishItem("To Create a great Angular App!!!"),
-    new WishItem("Get Coffee", true) 
-  ]
+  items! : WishItem[];
 
+  ngOnInit(): void {
+    this.wishService.getWishes().subscribe((data:any) => {
+      this.items = data;
+    })
+  }
 
-  constructor(events: EventService){
+  constructor(events: EventService, private wishService: WishService){
     events.listen('removeWish', (wish)=>{
       console.log(wish)
       let index = this.items.indexOf(wish);
