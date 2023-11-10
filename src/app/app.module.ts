@@ -6,13 +6,15 @@ import { FormsModule } from '@angular/forms';
 import { WishListComponent } from './wish-list/wish-list.component';
 import { AddWishFormComponent } from './add-wish-form/add-wish-form.component';
 import { FilterWishComponent } from './filter-wish/filter-wish.component';
+import { WishListItemComponent } from './wish-list-item/wish-list-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WishListComponent,
     AddWishFormComponent,
-    FilterWishComponent
+    FilterWishComponent,
+    WishListItemComponent
   ],
   imports: [
     BrowserModule,
