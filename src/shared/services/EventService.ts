@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Observable, Subject } from "rxjs";
 import { AppComponent } from "src/app/app.component";
-import { WishListItemComponent } from "src/app/wish-list-item/wish-list-item.component";
+import { WishListItemComponent } from "src/app/wish/wish-list-item/wish-list-item.component";
 
 @Injectable({
     providedIn: 'platform'
