@@ -6,13 +6,16 @@ import { FilterWishComponent } from './filter-wish/filter-wish.component';
 import { WishListItemComponent } from './wish-list-item/wish-list-item.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
+import { WishService } from './wish.service';
+import { WishComponent } from './wish.component';
 
 @NgModule({
   declarations: [
     WishListComponent,
     AddWishFormComponent,
     FilterWishComponent,
-    WishListItemComponent
+    WishListItemComponent,
+    WishComponent
   ],
   imports: [
     CommonModule,
@@ -20,10 +23,7 @@ import { HttpClientModule } from "@angular/common/http";
     HttpClientModule
   ],
   exports: [
-    WishListComponent,
-    AddWishFormComponent,
-    FilterWishComponent,
-    WishListItemComponent
+   WishComponent
   ]
 })
 export class WishModule { }
